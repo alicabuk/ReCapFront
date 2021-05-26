@@ -21,6 +21,7 @@ export class CarComponent implements OnInit {
   filterForm:FormGroup;
   cars:Car[]=[];
   dataLoaded=false;
+  imageUrl="https://localhost:44374/";
 
   constructor(private carService:CarService,private activatedRoot:ActivatedRoute,
     private brandService:BrandService,
