@@ -21,6 +21,7 @@ export class CarComponent implements OnInit {
   filterForm:FormGroup;
   cars:Car[]=[];
   dataLoaded=false;
+  currentCar: Car;
   imageUrl="https://localhost:44374/";
 
   constructor(private carService:CarService,private activatedRoot:ActivatedRoute,
@@ -40,7 +41,7 @@ export class CarComponent implements OnInit {
 
   getCarsDetails(){
     this.carService.getCarsDetails().subscribe(response=>{           
-      this.cars=response.data;
+      this.cars=response.data.filter(car=>car.carId);
       this.dataLoaded=true;      
     })
   }
@@ -64,5 +65,11 @@ export class CarComponent implements OnInit {
   }
   clear(){
    this.filterForm.reset(); 
+
+  }
+  
+  setCurrentCar(car: Car) {
+    this.currentCar = car;
+    console.log(this.currentCar);
   }
 }

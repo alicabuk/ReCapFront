@@ -28,10 +28,10 @@ export class RegisterComponent implements OnInit {
   }
   register(){
     if(this.registerForm.valid){
-      let registerModel:RegisterModel = Object.assign({},this.registerForm.value)
-      this.authService.register(registerModel).subscribe(response=>{
+      let registerModel=Object.assign({},this.registerForm.value)
+      this.authService.register(registerModel)
         this.toastrService.info("Başarıyla Kayıt Oldunuz.");
-      })
+     
     }else{
       this.toastrService.info("Lütfen tüm alanları doldurunuz","Bilgilendirme")
     }

@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "@auth0/angular-jwt": "^5.0.2",
     "bootstrap": "^5.0.0-beta3",
     "jquery": "^3.6.0",
     "ngx-toastr": "^13.2.1",
@@ -27,8 +28,8 @@
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.8",
-    "@angular/cli": "~11.2.8",
+    "@angular-devkit/build-angular": "^0.901.15",
+    "@angular/cli": "^12.0.3",
     "@angular/compiler-cli": "~11.2.9",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
@@ -43,6 +44,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "xxxxx": "^1.0.3"
   }
 }

@@ -1,18 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark">
   <div class="container-fluid">
     <div class="container">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><b>Sende Kirala!</b> </a>
-        </li>   
-      </ul>
-      
-      <form class="d-flex">        
-        <button class="btn btn-warning ms-3" routerLink="/register" type="submit">Kayıt Ol</button>
-        <button class="btn btn-warning ms-3" routerLink="/login" type="submit">Giriş Yap</button>
-      </form>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><b>Sende Kirala!</b> </a>
+          </li>
+        </ul>
+        <div *ngIf="!userLogged">
+          <form class="d-flex">
+            <button class="btn btn-warning ms-3" routerLink="/register" type="submit">Kayıt Ol</button>
+            <button class="btn btn-warning ms-3" routerLink="/login" type="submit">Giriş Yap</button>
+          </form>
+        </div>    
+        <div *ngIf="userLogged">          
+            <b style="color: beige;">Hoşgeldin {{userName}}</b>
+
+            <button class="btn btn-warning ms-3" routerLink='/profile' type="submit">Profil</button>
+            <button class="btn btn-warning ms-3" type="submit" (click)="logout()">Çıkış</button>          
+        </div>  
+      </div>
     </div>
-  </div>
   </div>
 </nav>

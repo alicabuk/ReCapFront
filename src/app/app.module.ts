@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CarComponent } from './components/car/car.component';
 import { BrandComponent } from './components/brand/brand.component';
-import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 
@@ -18,19 +17,26 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { CardetailComponent } from './components/car/car-detail/cardetail/cardetail.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { ProfileComponent } from './components/profile/profile.component';
 
+export function tokenGetter(){
+  return localStorage.getItem('token')
+}
 @NgModule({
   declarations: [
     AppComponent,
     NaviComponent,
     CarComponent,
     BrandComponent,
-    ColorComponent,
     CustomerComponent,
     RentalComponent,
     LoginComponent,
     RegisterComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    CardetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,11 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
       positionClass:"toast-bottom-right"
     }),
     BrowserAnimationsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    }),
     ReactiveFormsModule
   ],
   providers: [
